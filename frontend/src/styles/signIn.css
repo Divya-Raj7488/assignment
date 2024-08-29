@@ -30,15 +30,30 @@
   width: 50%;
   height: 3rem;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid rgb(240, 236, 236);
   border-radius: 0.8rem;
 }
 .statusDropDown {
   background-color: transparent;
+  width: 80%;
+  border: 2px solid rgb(240, 236, 236);
+  height: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  padding-left: 0.5rem;
+  option {
+    color: black;
+  }
+}
+.emailForm {
+  outline: none;
+}
+.emailForm:focus {
+  width: 82%;
 }
 
 @media screen and (max-width: 800px) {
-.formContainer{
+  .formContainer {
     width: 80vw;
-}
+  }
 }
