@@ -1,0 +1,44 @@
+.signInContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  width: 35vw;
+  height: 70vh;
+  color: white;
+  border: 2px solid rgb(240, 236, 236);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  .emailForm {
+    width: 80%;
+    height: 3rem;
+    border: 2px solid rgb(240, 236, 236);
+    border-radius: 0.5rem;
+    background: transparent;
+    padding-left: 0.5rem;
+  }
+}
+.signInBtn {
+  width: 50%;
+  height: 3rem;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 0.8rem;
+}
+.statusDropDown {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+.formContainer{
+    width: 80vw;
+}
+}
