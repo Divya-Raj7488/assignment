@@ -6,9 +6,9 @@
   justify-content: center;
   align-items: center;
 }
-.signUpform {
+.formContainer {
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   color: white;
   border: 2px solid rgb(240, 236, 236);
   border-radius: 0.5rem;
@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  .formElement {
+  .emailForm {
     width: 80%;
     height: 3rem;
     border: 2px solid rgb(240, 236, 236);
@@ -26,23 +26,34 @@
     padding-left: 0.5rem;
   }
 }
-.submitBtn {
+.signInBtn {
   width: 50%;
   height: 3rem;
   background: transparent;
   border: 2px solid rgb(240, 236, 236);
   border-radius: 0.8rem;
 }
-
-.formElement {
+.statusDropDown {
+  background-color: transparent;
+  width: 80%;
+  border: 2px solid rgb(240, 236, 236);
+  height: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  padding-left: 0.5rem;
+  option {
+    color: black;
+  }
+}
+.emailForm {
   outline: none;
 }
-.formElement:focus {
+.emailForm:focus {
   width: 82%;
 }
 
 @media screen and (max-width: 800px) {
-  .signUpform {
+  .formContainer {
     width: 80vw;
   }
 }

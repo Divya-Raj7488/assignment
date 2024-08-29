@@ -1,90 +1,54 @@
 "use client";
 import React, { useState } from "react";
-import "../../styles/signIn.css";
+import "../../styles/signin.css";
 import axios from "axios";
 
-const SignIn = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [status, setStatus] = useState("");
-  const [mssg, setMssg] = useState("");
 
-  const handleSubmit = async () => {
+  
+  const handleSignIn = async () => {
     try {
-      if (
-        !email ||
-        password.length <= 6 ||
-        password !== confirmPassword ||
-        !status
-      ) {
+      if (!email || !password || password.length <= 6) {
         console.log("incorrect input");
-        return "please check your Inputs";
+        return "incorrect email or password";
       }
-      const response = await axios.post("http://localhost:3500/user/signup", {
+      const response = await axios.post("http://localhost:3500/user/signin", {
         email: email,
         password: password,
-        status: status,
       });
-      setMssg(response.data.message);
-      console.log("hello", response);
+      console.log(response.data);
     } catch (err) {
       console.log(err);
     }
     setEmail("");
-    setConfirmPassword("");
     setPassword("");
-    setStatus("");
   };
   return (
     <div className="signInContainer">
-      <div className="formContainer">
-        <h2>SignIn</h2>
+      <div className="signUpform">
+        <div>Sign In</div>
         <input
           type="text"
           placeholder="Email"
-          className="emailForm"
+          className="formElement"
           value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Enter Password"
-          className="emailForm"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="text"
-          placeholder="confirm password"
-          className="emailForm"
-          value={confirmPassword}
-          onChange={(e) => {
-            setConfirmPassword(e.target.value);
-          }}
+          placeholder="password"
+          className="formElement"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <select
-          className="statusDropDown"
-          onChange={(e) => {
-            setStatus(e.target.value);
-            console.log(e.target.value);
-          }}
-        >
-          <option value="">select an option</option>
-          <option value="admin">Admin</option>
-          <option value="Team Member">Team Member</option>
-        </select>
-        <button type="submit" onClick={handleSubmit} className="signInBtn">
-          Submit
+        <button type="submit" onClick={handleSignIn} className="submitBtn">
+          Sign In
         </button>
-        <div>{mssg}</div>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default SignUp;
