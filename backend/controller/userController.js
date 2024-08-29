@@ -37,7 +37,7 @@ const signUp = async (req, res) => {
     }
   );
   return res
-    .cookie(token)
+    .cookie("Authorization ", token, { httpOnly: true })
     .status(200)
     .json({ message: "user created successfully" });
 };
@@ -67,7 +67,7 @@ const signIn = async (req, res) => {
   );
   return res
     .status(200)
-    .cookie("Authorization ", token)
+    .cookie("Authorization ", token, { httpOnly: true })
     .json({ message: "sign in successful" });
 };
 export { signIn, signUp };
