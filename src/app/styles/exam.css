@@ -1,0 +1,20 @@
+.examBox{
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.timer{
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.questions{
+    width: 100vw;
+    height: 100vh;
+}

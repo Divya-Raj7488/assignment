@@ -1,0 +1,28 @@
+.homePage {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #000025, #060640);
+  gap: 1rem;
+}
+.title {
+  width: 50vw;
+  height: auto;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.startExamBtn {
+  width: 10rem;
+  height: 3.5rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
